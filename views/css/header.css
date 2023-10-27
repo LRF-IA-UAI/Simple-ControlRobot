@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --blanco:#fff;
+    --grisClaro:#EEF0F2;
+    --negro:#000;
+    --azul:#1D51D7;
+    --amarillo:#FFE400;
+    --naranja:#FF6B35;
+    --negroClaro:#000500;
+    --celeste:#00A5E0;
+    --rojo:#D72638;
+}
+.menu__burgerButton{
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    background-color: var(--negro);
+    -webkit-box-shadow: -7px 6px 7px 1px rgba(255,255,255,0.1); 
+    box-shadow: -7px 6px 7px 1px rgba(255,255,255,0.1);
+  }
+  .btnCerrarMenu{
+    display: none;
+  }
+  nav {
+    padding: 15px 0;
+    width: 70%;
+    display: flex;
+  }
+  .botonMenu{
+    display: none;
+  }
+.menu__container {
+    display: flex;
+    margin-left: auto;
+  }
+  .menu__item {
+    font-weight: bold;
+    color: var(--blanco);
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 147px;
+    padding: 15px 0;
+    border-radius: 23px;
+    background-color: var(--negro);
+    margin-right: 25px;
+  }
+  .menu__item a {
+    text-decoration: none;
+    color: var(--blanco);
+  }
+  .itemButton {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--negro);
+    background-color: var(--blanco);
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--gris);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .botonMenu{
+      transition:top .5s ease;
+      z-index: 1100;
+      position:fixed;
+      display: flex;
+      width: 100%;
+      background-color: var(--negro);
+      -webkit-box-shadow: -7px 6px 7px 1px rgba(255,255,255,0.1); 
+      box-shadow: -7px 6px 7px 1px rgba(255,255,255,0.1);  
+    }
+    .iconoMenu{
+      margin-left: auto;
+      width: 80px;
+      padding: 20px;
+    }
+    .btnCerrarMenu{
+      display: block;
+    }
+    header {
+      height: 100%;
+      width: 60%;
+      position: fixed;
+      right: -100%;
+      transition:left 1s ease;
+    }
+    .menu__container{
+      margin: 0;
+      width: 100%;
+      margin-top: 50px;
+    }
+    .menu__container{
+      flex-direction: column;
+    }
+    .menu__item{
+      margin:25px 0;
+      display: inline-block;
+      width: 100%;
+      padding: 40px 0;
+      border: 1px solid var(--grisOscuro);
+    }
+    .menu__item a{
+      font-size: 25px;
+    }
+}
+@media screen and (max-width: 800px) {
+    header {
+       width: 75%;
+     }
+    }
+    @media screen and (max-width: 550px) {
+        header {
+          width: 95%;
+        }}

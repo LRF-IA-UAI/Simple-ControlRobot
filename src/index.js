@@ -1,29 +1,35 @@
 const express = require("express");
 const path = require("path");
+const serial = require("./services/controlRobot");
 const port = 3000;
 const app = express();
 const server = require("http").createServer(app);
 //const io = require("socket.io")(server);
 
 const iniciarServer = () => {
-  var publicPath = path.resolve(__dirname, "../views");
+  let publicPath = path.resolve(__dirname, "../views");
+  serial.encender()
+
   app.use(express.static(publicPath));
   // set the view engine to ejs
   app.set("view engine", "ejs");
 
-  app.get("/", function (req, res) {
+  app.get("/", (req, res) => {
     res.render("pages/index.ejs");
   });
-  app.get("/foward", function (req, res) {
-    res.render("pages/error.ejs");
+  app.get("/foward", (req, res) => {
+    serial.enviar("")
   });
-  app.get("/error", function (req, res) {
-    res.render("pages/error.ejs");
+  app.get("/rigth", (req, res) => {
+    serial.enviar("")
   });
-  app.get("/error", function (req, res) {
-    res.render("pages/error.ejs");
+  app.get("/left", (req, res) => {
+    serial.enviar("")
   });
-  app.get("/error", function (req, res) {
+  app.get("/back", (req, res) => {
+    serial.enviar("")
+  });
+  app.get("/error", (req, res) => {
     res.render("pages/error.ejs");
   });
 
